@@ -1,61 +1,45 @@
-<header class="bg-gradient-to-br from-[#80AA87] to-[#5C7E6B] text-white fixed top-0 left-0 w-full z-50 shadow-xl backdrop-blur-sm">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 grid grid-cols-3 items-center">
-    <!-- Left: Logo -->
-    <div class="flex-shrink-0 flex items-center">
-      <a href="index.html" class="flex items-center space-x-2 text-xl font-bold tracking-tight hover:opacity-90">
-        <span class="text-2xl">📰</span>
-        <span>Newsletter Bot</span>
+<header class="bg-[#5C7E6B] text-white fixed top-0 left-0 w-full z-50 shadow-md backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-2 text-xl font-bold hover:opacity-90">
+      <span class="text-2xl">🤖</span>
+      <span>Newsletter Bot</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+      <a href="index.html" class="hover:text-green-100 transition">Home</a>
+      <a href="privacy.html" class="hover:text-green-100 transition">Privacy</a>
+      <a href="terms.html" class="hover:text-green-100 transition">Terms</a>
+      <a href="https://discord.gg/8GmjZnU2N9" target="_blank" class="hover:text-green-100 transition">Support</a>
+    </nav>
+
+    <!-- Invite + Mobile Toggle -->
+    <div class="flex items-center space-x-3">
+      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+        class="hidden md:inline-flex bg-white text-[#5C7E6B] font-semibold text-sm px-4 py-2 rounded-lg shadow hover:brightness-110 transition">
+        ➕ Invite
       </a>
-    </div>
-
-    <!-- Center: Navigation -->
-    <div class="flex justify-center">
-      <nav class="hidden sm:flex items-center space-x-6 text-sm font-medium h-full">
-        <a href="index.html" class="relative group flex items-center">
-          <span class="group-hover:underline decoration-transparent">Home</span>
-          <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-white transition-all group-hover:w-full"></span>
-        </a>
-        <a href="privacy.html" class="relative group flex items-center">
-          <span class="group-hover:underline decoration-transparent">Privacy</span>
-          <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-white transition-all group-hover:w-full"></span>
-        </a>
-        <a href="terms.html" class="relative group flex items-center">
-          <span class="group-hover:underline decoration-transparent">Terms</span>
-          <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-white transition-all group-hover:w-full"></span>
-        </a>
-        <a href="https://discord.gg/8GmjZnU2N9" target="_blank" class="relative group flex items-center">
-          <span class="group-hover:underline decoration-transparent">Support Server</span>
-          <span class="absolute left-0 -bottom-1 h-0.5 w-0 bg-white transition-all group-hover:w-full"></span>
-        </a>
-      </nav>
-    </div>
-
-    <!-- Right: Invite Button & Mobile Toggle -->
-    <div class="flex justify-end items-center space-x-2">
-      <div class="hidden lg:flex items-center">
-        <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
-          class="bg-white text-[#5C7E6B] px-4 py-2 rounded-lg font-semibold text-sm shadow hover:brightness-110 transition">
-          ➕ Invite
-        </a>
-      </div>
-
-      <!-- Mobile Menu Toggle -->
-      <button id="mobile-menu-toggle" class="sm:hidden text-white focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <button id="mobile-menu-toggle" class="md:hidden text-white focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Navigation Dropdown -->
-  <div id="mobile-menu" class="sm:hidden hidden px-6 pb-4 pt-2 bg-[#5C7E6B]">
-    <a href="index.html" class="block py-2 text-sm hover:underline">Home</a>
-    <a href="privacy.html" class="block py-2 text-sm hover:underline">Privacy</a>
-    <a href="terms.html" class="block py-2 text-sm hover:underline">Terms</a>
-    <a href="https://discord.gg/8GmjZnU2N9" target="_blank" class="block py-2 text-sm hover:underline">Support</a>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 pt-2 bg-[#6B8D77] shadow-md">
+    <a href="index.html" class="block py-2 text-sm hover:text-green-100">Home</a>
+    <a href="privacy.html" class="block py-2 text-sm hover:text-green-100">Privacy</a>
+    <a href="terms.html" class="block py-2 text-sm hover:text-green-100">Terms</a>
+    <a href="https://discord.gg/8GmjZnU2N9" target="_blank" class="block py-2 text-sm hover:text-green-100">Support</a>
     <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
-      class="block py-2 text-sm text-white font-bold hover:text-green-100">➕ Invite Newsletter Bot</a>
+      class="block py-2 mt-2 text-sm font-bold text-white bg-[#4F6B5E] rounded text-center hover:bg-[#6C8D79] transition">
+      ➕ Invite Newsletter Bot
+    </a>
   </div>
 
   <script>
