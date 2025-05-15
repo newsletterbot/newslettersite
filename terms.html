@@ -20,7 +20,7 @@
   <!-- Floating Header -->
   <div id="site-header"></div>
   <script>
-    fetch("partials/header.html")
+    fetch("components/header.html")
       .then(res => res.text())
       .then(html => document.getElementById("site-header").innerHTML = html);
   </script>
@@ -102,7 +102,7 @@
   <!-- Dynamic Footer -->
   <div id="site-footer"></div>
   <script>
-    fetch("partials/footer.html")
+    fetch("components/footer.html")
       .then(res => res.text())
       .then(html => document.getElementById("site-footer").innerHTML = html);
   </script>
