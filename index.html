@@ -1,87 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Newsletter Bot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fdfdfd;
-      color: #333;
-    }
-    header {
-      background-color: #1e1e1e;
-      color: #ffffff;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.8em;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #ccc;
-    }
-    .container {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    .description {
-      font-size: 1.1em;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-    .buttons a {
-      display: inline-block;
-      margin: 10px 15px;
-      padding: 14px 30px;
-      background-color: #5865F2;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .buttons a:hover {
-      background-color: #4752c4;
-    }
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      color: #888;
-      font-size: 0.9em;
+      font-family: 'Inter', sans-serif;
     }
   </style>
 </head>
-<body>
 
-  <header>
-    <h1>📰 Newsletter Bot</h1>
-    <p>Your custom news digest, delivered via Discord</p>
+<body class="bg-white text-gray-800">
+  <!-- Hero Section -->
+  <header class="bg-gray-900 text-white py-20 px-4 text-center">
+    <h1 class="text-5xl font-bold mb-4">📰 Newsletter Bot</h1>
+    <p class="text-lg max-w-2xl mx-auto">Your custom news digest delivered directly to your Discord. Stay informed, effortlessly.</p>
+    <div class="mt-8 flex justify-center gap-4">
+      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+        class="bg-indigo-600 hover:bg-indigo-500 px-6 py-3 rounded-lg font-semibold transition">📨 Invite Newsletter Bot</a>
+      <a href="#features" class="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg font-semibold transition">🔍 Learn More</a>
+    </div>
   </header>
 
-  <div class="container">
-    <div class="description">
-      <p><strong>Newsletter Bot</strong> is a fully-automated Discord companion that keeps you and your community up to date on the latest headlines in U.S. politics, world news, policy developments, and so much more.</p>
-      <p>Choose your preferred categories, customize your delivery time, and receive curated news articles directly via DM or channel posts — all from reliable sources using our RSS-based backend.</p>
+  <!-- Features Section -->
+  <section id="features" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">What Newsletter Bot Can Do</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">🗞️ Curated News</h3>
+          <p class="text-gray-600">Choose categories and receive filtered, high-quality news from trusted RSS feeds.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold mb-2">⏰ Scheduled Delivery</h3>
+          <p class="text-gray-600">Pick your delivery time and method — via DMs or a server channel.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold mb-2">⚙️ Personal Preferences</h3>
+          <p class="text-gray-600">Set preferences per server, per user. Fully customizable and easy to update.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="buttons">
-      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank">📨 Invite Newsletter Bot</a>
-      <a href="privacy.html">🔐 Privacy Policy</a>
-      <a href="terms.html">📜 Terms of Service</a>
+  <!-- Testimonials -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">What Users Are Saying</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <blockquote class="bg-gray-100 p-6 rounded-lg shadow" data-aos="fade-up">
+          <p class="italic">“Newsletter Bot keeps our political server informed without clutter. 10/10.”</p>
+          <footer class="mt-4 text-right">— User from /r/Politics</footer>
+        </blockquote>
+        <blockquote class="bg-gray-100 p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
+          <p class="italic">“I love that I can just get a summary every morning in DMs. No ads. No spam.”</p>
+          <footer class="mt-4 text-right">— Journalism student</footer>
+        </blockquote>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <footer>
-    <p>© 2025 Newsletter Bot. Built with 💙 for informed communities.</p>
+  <!-- CTA Banner -->
+  <section class="bg-indigo-600 text-white py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to try it out?</h2>
+    <p class="mb-6">Invite Newsletter Bot to your server and start getting smarter news today.</p>
+    <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+      class="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold shadow hover:bg-gray-100 transition">🚀 Invite Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-10 px-6 text-center">
+    <p class="mb-4">© 2025 Newsletter Bot. Built with 💙 for informed communities.</p>
+    <div class="space-x-4">
+      <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+      <a href="terms.html" class="hover:underline">Terms of Service</a>
+    </div>
   </footer>
 
+  <script>
+    AOS.init();
+  </script>
 </body>
+
 </html>
