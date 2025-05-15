@@ -16,20 +16,15 @@
   </style>
 </head>
 
-<body class="bg-[#F4F1EB] text-[#2A2A2A]">
+<body class="pt-16 bg-[#F4F1EB] text-[#2A2A2A]">
   <!-- Hero Section -->
-  <header class="bg-[#80AA87] text-white py-20 px-4 text-center">
-    <h1 class="text-5xl font-bold mb-4">📰 Newsletter Bot</h1>
-    <p class="text-lg max-w-2xl mx-auto">Your custom news digest delivered directly to your Discord. Stay informed,
-      effortlessly.</p>
-    <div class="mt-8 flex justify-center gap-4">
-      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
-        class="bg-[#5C7E6B] hover:bg-[#46594B] px-6 py-3 rounded-lg font-semibold transition">📨 Invite Newsletter
-        Bot</a>
-      <a href="#features" class="bg-[#5C7E6B] hover:bg-[#46594B] px-6 py-3 rounded-lg font-semibold transition">🔍 Learn
-        More</a>
-    </div>
-  </header>
+  <!-- Floating Header -->
+  <div id="site-header"></div>
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("site-header").innerHTML = html);
+  </script>
 
   <!-- Features Section -->
   <section id="features" class="py-20 px-6 bg-[#F3F1EC]">
@@ -42,7 +37,8 @@
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">📢 Server Feed Channels</h3>
-          <p class="text-gray-600">Designate public channels that receive live-updating news posts based on your settings.</p>
+          <p class="text-gray-600">Designate public channels that receive live-updating news posts based on your
+            settings.</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">⚙️ Per-User Preferences</h3>
@@ -51,11 +47,13 @@
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">📊 Scoring System</h3>
-          <p class="text-gray-600">Articles are ranked with a smart keyword matching system to highlight the most relevant news — don't worry about being spammed with irrelevant articles! </p>
+          <p class="text-gray-600">Articles are ranked with a smart keyword matching system to highlight the most
+            relevant news — don't worry about being spammed with irrelevant articles! </p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">🧩 Category Grouping</h3>
-          <p class="text-gray-600">Group articles by topic, or send them as a unified stream — your choice, per channel or for your DM Newsletter.</p>
+          <p class="text-gray-600">Group articles by topic, or send them as a unified stream — your choice, per channel
+            or for your DM Newsletter.</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">💬 Interactive Discord UI</h3>
@@ -63,7 +61,8 @@
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">📥 Feed Dispatch Engine</h3>
-          <p class="text-gray-600">A fast, efficient polling system ensures your server receives updates not long after they're posted.</p>
+          <p class="text-gray-600">A fast, efficient polling system ensures your server receives updates not long after
+            they're posted.</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">🔧 Channel Customization</h3>
@@ -86,12 +85,18 @@
         clarity at its core, Newsletter Bot isn't just another feed reader — it's a communication tool tailored for
         servers that care about current events and trustworthy delivery.</p>
       <ul class="text-left text-gray-700 space-y-4 max-w-xl mx-auto" data-aos="fade-up">
-        <li><span class="font-semibold">🎯 Precision Filters:</span> Target content by topic, language, and even sentiment.</li>
-        <li><span class="font-semibold">🧠 Smart Sorting:</span> Score-driven article ranking and deduplication to avoid irrelevant posts.</li>
-        <li><span class="font-semibold">🎨 Flexible Layouts:</span> Choose compact summaries, single-article views, or dynamic embeds.</li>
-        <li><span class="font-semibold">📜 Clean UI:</span> Built using modern Discord UI components that work beautifully.</li>
-        <li><span class="font-semibold">🔒 Privacy First:</span> No message logging, no third-party analytics — your data stays yours.</li>
-        <li><span class="font-semibold">🛠️ Admin Friendly:</span> Slash commands, role-based controls, and modular config tools.</li>
+        <li><span class="font-semibold">🎯 Precision Filters:</span> Target content by topic, language, and even
+          sentiment.</li>
+        <li><span class="font-semibold">🧠 Smart Sorting:</span> Score-driven article ranking and deduplication to avoid
+          irrelevant posts.</li>
+        <li><span class="font-semibold">🎨 Flexible Layouts:</span> Choose compact summaries, single-article views, or
+          dynamic embeds.</li>
+        <li><span class="font-semibold">📜 Clean UI:</span> Built using modern Discord UI components that work
+          beautifully.</li>
+        <li><span class="font-semibold">🔒 Privacy First:</span> No message logging, no third-party analytics — your
+          data stays yours.</li>
+        <li><span class="font-semibold">🛠️ Admin Friendly:</span> Slash commands, role-based controls, and modular
+          config tools.</li>
       </ul>
     </div>
   </section>
@@ -146,14 +151,13 @@
       Now</a>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-[#2f463b] text-gray-300 py-10 px-6 text-center">
-    <p class="mb-4">© 2025 Newsletter Bot. Built with 💚 for informed communities.</p>
-    <div class="space-x-4">
-      <a href="privacy.html" class="hover:underline">Privacy Policy</a>
-      <a href="terms.html" class="hover:underline">Terms of Service</a>
-    </div>
-  </footer>
+  <!-- Dynamic Footer -->
+  <div id="site-footer"></div>
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("site-footer").innerHTML = html);
+  </script>
 
   <script>
     AOS.init();
