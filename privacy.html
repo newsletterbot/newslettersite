@@ -16,16 +16,25 @@
   </style>
 </head>
 
-<body class="bg-[#F4F1EB] text-[#2A2A2A]">
-  <header class="bg-[#80AA87] text-white py-16 px-4 text-center">
-    <h1 class="text-4xl font-bold" data-aos="fade-down">Privacy Policy</h1>
-    <p class="mt-2 text-lg" data-aos="fade-down" data-aos-delay="100">Effective Date: May 15, 2025</p>
-  </header>
+<body class="pt-16 bg-[#F4F1EB] text-[#2A2A2A]">
+  <!-- Floating Header -->
+  <div id="site-header"></div>
+  <script>
+    fetch("partials/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("site-header").innerHTML = html);
+  </script>
 
   <main class="max-w-4xl mx-auto py-16 px-6">
+    <section class="text-center mb-12" data-aos="fade-down">
+      <h1 class="text-4xl font-bold text-[#5C7E6B]">Privacy Policy</h1>
+      <p class="mt-2 text-lg text-[#2A2A2A]">Effective Date: May 15, 2025</p>
+    </section>
+
     <section class="mb-12" data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Overview</h2>
-      <p>Newsletter Bot respects your privacy. This document outlines what data we collect, how it's used, and your rights regarding that data. This policy applies to all users of the Newsletter Bot on the Discord platform.</p>
+      <p>Newsletter Bot respects your privacy. This document outlines what data we collect, how it's used, and your
+        rights regarding that data. This policy applies to all users of the Newsletter Bot on the Discord platform.</p>
     </section>
 
     <section class="mb-12" data-aos="fade-up">
@@ -33,14 +42,16 @@
       <ul class="list-disc pl-6 space-y-2">
         <li><strong>Discord User ID</strong>: Used to associate your preferences with your account securely.</li>
         <li><strong>Server ID & Channel IDs</strong>: Stored when you configure server feeds or delivery channels.</li>
-        <li><strong>Preferences & Settings</strong>: Includes selected news categories, delivery methods (DM or channel), delivery times, formatting style, and keyword scores.</li>
+        <li><strong>Preferences & Settings</strong>: Includes selected news categories, delivery methods (DM or
+          channel), delivery times, formatting style, and keyword scores.</li>
         <li><strong>Timezone</strong>: Manually provided to schedule newsletters appropriately. Not auto-detected.</li>
       </ul>
     </section>
 
     <section class="mb-12" data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">How We Use Your Data</h2>
-      <p>The data we collect is used exclusively to deliver customized, scheduled news updates. We do not use your data for analytics, advertising, or third-party tracking.</p>
+      <p>The data we collect is used exclusively to deliver customized, scheduled news updates. We do not use your data
+        for analytics, advertising, or third-party tracking.</p>
     </section>
 
     <section class="mb-12" data-aos="fade-up">
@@ -48,24 +59,28 @@
       <ul class="list-disc pl-6 space-y-2">
         <li>We do <strong>not</strong> log or store message content from users.</li>
         <li>We do <strong>not</strong> collect email addresses, IP addresses, device info, or location data.</li>
-        <li>We do <strong>not</strong> store ephemeral interaction responses or slash command results beyond the runtime context.</li>
+        <li>We do <strong>not</strong> store ephemeral interaction responses or slash command results beyond the runtime
+          context.</li>
         <li>We do <strong>not</strong> integrate any third-party analytics tools.</li>
       </ul>
     </section>
 
     <section class="mb-12" data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Data Retention</h2>
-      <p>User preferences and configuration data are retained only while your account is active. If you remove the bot from your server, your data is automatically deleted.</p>
+      <p>User preferences and configuration data are retained only while your account is active. If you remove the bot
+        from your server, your data is automatically deleted.</p>
     </section>
 
     <section class="mb-12" data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Data Access and Sharing</h2>
-      <p>Access to user data is strictly limited to the developer and is used solely for debugging and service maintenance. Data is never shared, sold, or transferred to third parties.</p>
+      <p>Access to user data is strictly limited to the developer and is used solely for debugging and service
+        maintenance. Data is never shared, sold, or transferred to third parties.</p>
     </section>
 
     <section class="mb-12" data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Security</h2>
-      <p>All stored data is protected using modern security practices, including credential-based access control and encrypted storage (where applicable). We monitor for unauthorized access and apply patches regularly.</p>
+      <p>All stored data is protected using modern security practices, including credential-based access control and
+        encrypted storage (where applicable). We monitor for unauthorized access and apply patches regularly.</p>
     </section>
 
     <section class="mb-12" data-aos="fade-up">
@@ -80,17 +95,24 @@
 
     <section class="mb-12" data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Changes to This Policy</h2>
-      <p>We may update this policy as the bot evolves. Major changes will be announced via our Discord support server or website. Continued use of the bot constitutes acceptance of any new terms.</p>
+      <p>We may update this policy as the bot evolves. Major changes will be announced via our Discord support server or
+        website. Continued use of the bot constitutes acceptance of any new terms.</p>
     </section>
 
     <div class="text-center mt-16">
-      <a href="index.html" class="inline-block bg-[#5C7E6B] text-white px-6 py-3 rounded-md text-lg hover:bg-[#426B5A] transition">← Back to Home</a>
+      <a href="index.html"
+        class="inline-block bg-[#5C7E6B] text-white px-6 py-3 rounded-md text-lg hover:bg-[#426B5A] transition">← Back
+        to Home</a>
     </div>
   </main>
 
-  <footer class="bg-[#2F463B] text-gray-200 text-center py-6 mt-16">
-    <p>© 2025 Newsletter Bot. No tracking. No spam. Just news.</p>
-  </footer>
+  <!-- Dynamic Footer -->
+  <div id="site-footer"></div>
+  <script>
+    fetch("partials/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("site-footer").innerHTML = html);
+  </script>
 
   <script>
     AOS.init();
