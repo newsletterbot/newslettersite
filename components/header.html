@@ -1,8 +1,7 @@
-<header
-  class="bg-gradient-to-br from-[#80AA87] to-[#5C7E6B] text-white fixed top-0 left-0 w-full z-50 shadow-xl backdrop-blur-sm">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<header class="bg-gradient-to-br from-[#80AA87] to-[#5C7E6B] text-white fixed top-0 left-0 w-full z-50 shadow-xl backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 grid grid-cols-3 items-center">
     <!-- Left: Logo -->
-    <div class="flex-shrink-0">
+    <div class="flex-shrink-0 flex items-center">
       <a href="index.html" class="flex items-center space-x-2 text-xl font-bold tracking-tight hover:opacity-90">
         <span class="text-2xl">📰</span>
         <span>Newsletter Bot</span>
@@ -10,7 +9,7 @@
     </div>
 
     <!-- Center: Navigation -->
-    <div class="flex-grow flex justify-center">
+    <div class="flex justify-center">
       <nav class="hidden sm:flex items-center space-x-6 text-sm font-medium h-full">
         <a href="index.html" class="relative group flex items-center">
           <span class="group-hover:underline decoration-transparent">Home</span>
@@ -31,21 +30,22 @@
       </nav>
     </div>
 
-    <!-- Right: Invite Button -->
-    <div class="hidden lg:flex items-center">
-      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
-        class="bg-white text-[#5C7E6B] px-4 py-2 rounded-lg font-semibold text-sm shadow hover:brightness-110 transition">
-        ➕ Invite
-      </a>
+    <!-- Right: Invite Button & Mobile Toggle -->
+    <div class="flex justify-end items-center space-x-2">
+      <div class="hidden lg:flex items-center">
+        <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+          class="bg-white text-[#5C7E6B] px-4 py-2 rounded-lg font-semibold text-sm shadow hover:brightness-110 transition">
+          ➕ Invite
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="mobile-menu-toggle" class="sm:hidden text-white focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
-
-    <!-- Mobile Menu Toggle -->
-    <button id="mobile-menu-toggle" class="sm:hidden text-white focus:outline-none ml-4">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-
   </div>
 
   <!-- Mobile Navigation Dropdown -->
