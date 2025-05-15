@@ -1,108 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Newsletter Bot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fafafa;
-      color: #333;
-      line-height: 1.75;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    h1 {
-      color: #1e1e1e;
-      font-size: 2.5em;
-      border-bottom: 3px solid #5865F2;
-      padding-bottom: 10px;
-      margin-bottom: 40px;
-    }
-    h2 {
-      color: #5865F2;
-      font-size: 1.5em;
-      margin-top: 40px;
-    }
-    p, li {
-      font-size: 1.05em;
-    }
-    ul {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
-    .note {
-      font-style: italic;
-      color: #666;
-    }
-    a {
-      display: inline-block;
-      margin-top: 50px;
-      text-decoration: none;
-      color: #5865F2;
-      font-weight: 600;
-      font-size: 1em;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .section-bg {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 25px;
-      margin-top: 20px;
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Privacy Policy</h1>
 
-    <div class="section-bg">
-      <p><strong>Newsletter Bot</strong> values your privacy. This policy outlines what limited data we collect, how it is used, and how your information is protected. By using the bot, you consent to the practices outlined below.</p>
+<body class="bg-[#F4F1EB] text-[#2A2A2A]">
+  <header class="bg-[#80AA87] text-white py-16 px-4 text-center">
+    <h1 class="text-4xl font-bold" data-aos="fade-down">Privacy Policy</h1>
+    <p class="mt-2 text-lg" data-aos="fade-down" data-aos-delay="100">Effective Date: January 1, 2025</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto py-16 px-6">
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Overview</h2>
+      <p>Newsletter Bot respects your privacy. This document outlines what data we collect, how it's used, and your rights regarding that data. This policy applies to all users of the Newsletter Bot on the Discord platform.</p>
+    </section>
+
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Information We Collect</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Discord User ID</strong>: Used to associate your preferences with your account securely.</li>
+        <li><strong>Server ID & Channel IDs</strong>: Stored when you configure server feeds or delivery channels.</li>
+        <li><strong>Preferences & Settings</strong>: Includes selected news categories, delivery methods (DM or channel), delivery times, formatting style, and keyword scores.</li>
+        <li><strong>Timezone</strong>: Manually provided to schedule newsletters appropriately. Not auto-detected.</li>
+      </ul>
+    </section>
+
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">How We Use Your Data</h2>
+      <p>The data we collect is used exclusively to deliver customized, scheduled news updates. We do not use your data for analytics, advertising, or third-party tracking.</p>
+    </section>
+
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">What We Do <em>Not</em> Collect</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>We do <strong>not</strong> log or store message content from users.</li>
+        <li>We do <strong>not</strong> collect email addresses, IP addresses, device info, or location data.</li>
+        <li>We do <strong>not</strong> store ephemeral interaction responses or slash command results beyond the runtime context.</li>
+        <li>We do <strong>not</strong> integrate any third-party analytics tools.</li>
+      </ul>
+    </section>
+
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Data Retention</h2>
+      <p>User preferences and configuration data are retained only while your account is active. If you remove the bot from your server or use the <code class="bg-gray-200 px-2 py-1 rounded">/unsubscribe</code> or <code class="bg-gray-200 px-2 py-1 rounded">/reset</code> command, your data is automatically deleted.</p>
+    </section>
+
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Data Access and Sharing</h2>
+      <p>Access to user data is strictly limited to the developer and is used solely for debugging and service maintenance. Data is never shared, sold, or transferred to third parties.</p>
+    </section>
+
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Security</h2>
+      <p>All stored data is protected using modern security practices, including credential-based access control and encrypted storage (where applicable). We monitor for unauthorized access and apply patches regularly.</p>
+    </section>
+
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Request a copy of your stored data</li>
+        <li>Request correction or deletion</li>
+        <li>Withdraw your data by removing the bot or issuing a reset command</li>
+      </ul>
+    </section>
+
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">Changes to This Policy</h2>
+      <p>We may update this policy as the bot evolves. Major changes will be announced via our Discord support server or website. Continued use of the bot constitutes acceptance of any new terms.</p>
+    </section>
+
+    <div class="text-center mt-16">
+      <a href="index.html" class="inline-block bg-[#5C7E6B] text-white px-6 py-3 rounded-md text-lg hover:bg-[#426B5A] transition">← Back to Home</a>
     </div>
+  </main>
 
-    <h2>What We Collect</h2>
-    <p>We only store the minimum data needed to deliver your personalized news updates:</p>
-    <ul>
-      <li><strong>Discord User ID</strong> – to securely associate your preferences with your account</li>
-      <li><strong>News Preferences</strong> – your selected categories and delivery method (DM or channel)</li>
-      <li><strong>Delivery Settings</strong> – including the time of day you wish to receive updates</li>
-      <li><strong>Your Timezone</strong> – used to schedule delivery accurately (not auto-detected; you can choose any timezone for privacy)</li>
-    </ul>
+  <footer class="bg-[#2F463B] text-gray-200 text-center py-6 mt-16">
+    <p>© 2025 Newsletter Bot. No tracking. No spam. Just news.</p>
+  </footer>
 
-    <h2>Why We Store This</h2>
-    <p>This data allows the bot to deliver relevant, timely, and customized content. Without it, we cannot provide scheduled updates or respect your preferences.</p>
-
-    <h2>What We Don't Collect</h2>
-    <p>We <em>do not</em> collect or store:</p>
-    <ul>
-      <li>Any messages or content you send on Discord</li>
-      <li>Email addresses, IP addresses, or device information</li>
-      <li>Behavioral analytics or external account data</li>
-    </ul>
-
-    <h2>Third-Party Sharing</h2>
-    <p>Your data is <strong>never</strong> sold, rented, or shared with any third party. It is used exclusively to provide the functionality of the bot.</p>
-
-    <h2>Data Retention & Deletion</h2>
-    <p>All data is retained only as long as needed for active use. You may delete your data at any time by using the bot’s <code>/unsubscribe</code> or <code>/reset</code> command, or by contacting us directly.</p>
-
-    <h2>Security</h2>
-    <p>Data is stored using secure, industry-standard methods. Access is strictly limited and monitored to prevent unauthorized use or tampering.</p>
-
-    <h2>Policy Updates</h2>
-    <p>This policy may be revised as the bot evolves. We will notify users of significant changes via Discord announcements or the project website.</p>
-
-    <a href="index.html">← Back to Home</a>
-  </div>
+  <script>
+    AOS.init();
+  </script>
 </body>
+
 </html>

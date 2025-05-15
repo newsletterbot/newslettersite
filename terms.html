@@ -1,90 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service | Newsletter Bot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fafafa;
-      color: #333;
-      line-height: 1.75;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    h1 {
-      color: #1e1e1e;
-      font-size: 2.5em;
-      border-bottom: 3px solid #5865F2;
-      padding-bottom: 10px;
-      margin-bottom: 40px;
-    }
-    h2 {
-      color: #5865F2;
-      font-size: 1.5em;
-      margin-top: 40px;
-    }
-    p, li {
-      font-size: 1.05em;
-    }
-    ul {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
-    a {
-      display: inline-block;
-      margin-top: 50px;
-      text-decoration: none;
-      color: #5865F2;
-      font-weight: 600;
-      font-size: 1em;
-    }
-    a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Terms of Service</h1>
 
-    <p>Welcome to <strong>Newsletter Bot</strong>. These Terms of Service ("Terms") govern your use of the bot and its services provided via the Discord platform. By using Newsletter Bot, you agree to comply with these Terms.</p>
+<body class="bg-[#F4F1EB] text-[#2A2A2A]">
+  <header class="bg-[#80AA87] text-white py-16 px-4 text-center">
+    <h1 class="text-4xl font-bold" data-aos="fade-down">Terms of Service</h1>
+    <p class="mt-2 text-lg" data-aos="fade-down" data-aos-delay="100">Effective Date: January 1, 2025</p>
+  </header>
 
-    <h2>1. Use of the Service</h2>
-    <ul>
-      <li>You may use the bot only in compliance with Discord’s Terms of Service and Community Guidelines.</li>
-      <li>You are responsible for any activity conducted through your Discord account in relation to the bot.</li>
-      <li>You may not abuse, spam, or attempt to exploit the bot’s functionality in a way that degrades the experience for other users.</li>
-    </ul>
+  <main class="max-w-4xl mx-auto py-16 px-6">
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">1. Acceptance of Terms</h2>
+      <p>By adding or using Newsletter Bot, you agree to these Terms of Service. If you do not agree with any part of these terms, you may not use the bot or its services.</p>
+    </section>
 
-    <h2>2. Privacy and Data</h2>
-    <p>We collect only limited information as outlined in our <a href="privacy.html">Privacy Policy</a>. By using the bot, you consent to our data practices, which do not include message content, IP addresses, or external accounts.</p>
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">2. Bot Usage</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>You may only use Newsletter Bot in accordance with Discord’s <a href="https://discord.com/terms" class="underline text-[#5C7E6B]">Terms of Service</a> and <a href="https://discord.com/guidelines" class="underline text-[#5C7E6B]">Community Guidelines</a>.</li>
+        <li>You are responsible for any usage of the bot within servers you manage or control.</li>
+        <li>Abuse, spam, or manipulation of bot behavior may result in revocation of access without notice.</li>
+      </ul>
+    </section>
 
-    <h2>3. Premium Features & Payments</h2>
-    <p>Certain features of Newsletter Bot may be offered as part of a paid subscription in the future. All such payments will be handled exclusively through Discord’s own monetization tools.</p>
-    <ul>
-      <li>We do not collect, store, or have access to your payment or billing information.</li>
-      <li>Refunds, cancellations, and billing concerns are subject to Discord’s platform policies.</li>
-      <li>Subscription benefits are subject to change and may be adjusted or revoked at our discretion.</li>
-    </ul>
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">3. Collected Information</h2>
+      <p>The bot collects and stores minimal data needed to function. See our <a href="privacy.html" class="underline text-[#5C7E6B]">Privacy Policy</a> for full details.</p>
+    </section>
 
-    <h2>4. Availability and Support</h2>
-    <p>Newsletter Bot is provided “as-is.” While we strive for reliability, we make no guarantees of uptime, performance, or feature availability. Support is provided on a best-effort basis and is not guaranteed.</p>
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">4. Availability and Service Quality</h2>
+      <p>Newsletter Bot is provided “as-is” with no guarantees of uptime, performance, or response times. Features may change at any time without prior notice.</p>
+      <p class="mt-2">We aim for high reliability, but disruptions, bugs, or downtime may occur due to technical constraints or third-party outages.</p>
+    </section>
 
-    <h2>5. Termination of Service</h2>
-    <p>We reserve the right to terminate access to Newsletter Bot for any user who violates these Terms, abuses the service, or poses a risk to security or functionality. You may also stop using the bot at any time by removing it from your server.</p>
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">5. Premium Services</h2>
+      <p>Certain features may be offered as premium, subject to payment via Discord’s monetization tools. No billing or payment information is ever collected by us directly.</p>
+      <ul class="list-disc pl-6 space-y-2 mt-2">
+        <li>Refunds and subscriptions are governed by Discord's platform terms.</li>
+        <li>Premium perks may change or be discontinued without liability.</li>
+      </ul>
+    </section>
 
-    <h2>6. Changes to These Terms</h2>
-    <p>We may update these Terms from time to time. When we do, we will post the new version here and announce significant changes through the bot or website. Continued use of the service after such updates constitutes acceptance of the new terms.</p>
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">6. Limitation of Liability</h2>
+      <p>Under no circumstances will the developer of Newsletter Bot be liable for indirect, incidental, or consequential damages resulting from use or inability to use the service.</p>
+      <p class="mt-2">Use of the bot is at your own discretion and risk. The bot is not intended for use in critical systems or emergency applications.</p>
+    </section>
 
-    <a href="index.html">← Back to Home</a>
-  </div>
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">7. Termination</h2>
+      <p>We reserve the right to block users or servers from using Newsletter Bot at any time, with or without cause. You may stop using the bot at any time by removing it from your server.</p>
+    </section>
+
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-[#5C7E6B] mb-4">8. Changes to These Terms</h2>
+      <p>These Terms of Service may be updated periodically. We will announce material changes through the bot or website. Continued use of the service indicates acceptance of revised terms.</p>
+    </section>
+
+    <div class="text-center mt-16">
+      <a href="index.html" class="inline-block bg-[#5C7E6B] text-white px-6 py-3 rounded-md text-lg hover:bg-[#426B5A] transition">← Back to Home</a>
+    </div>
+  </main>
+
+  <footer class="bg-[#2F463B] text-gray-200 text-center py-6 mt-16">
+    <p>© 2025 Newsletter Bot. Use responsibly. Stay informed.</p>
+  </footer>
+
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
