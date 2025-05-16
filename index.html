@@ -13,9 +13,10 @@
   <meta property="og:url" content="https://newsletterbot.github.io/newslettersite/" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://newsletterbot.github.io/newslettersite/" />
-  <link rel="stylesheet" href="/components/scrollbar.css">
+  <link rel="stylesheet" href="./components/scrollbar.css" />
 
   <!-- Tailwind Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -29,7 +30,6 @@
       },
     }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -42,8 +42,6 @@
     .gradient-mask {
       background: radial-gradient(circle at top right, rgba(128, 170, 135, 0.6), transparent 60%);
     }
-  </style>
-
   </style>
 </head>
 
@@ -64,7 +62,7 @@
     <div class="max-w-3xl mx-auto" data-aos="fade-up">
 
       <!-- Robot image -->
-      <img src="/assets/robot.png" alt="Newsletter Bot" class="mx-auto mb-6 w-80 max-w-xs sm:max-w-md h-auto" />
+      <img src="./assets/robot.png" alt="Newsletter Bot" class="mx-auto mb-6 w-80 max-w-xs sm:max-w-md h-auto" />
 
       <h1 class="text-5xl font-extrabold mb-4 text-white">
         Stay Informed, Effortlessly
@@ -143,10 +141,10 @@
     <div class="max-w-5xl mx-auto px-4" x-data="{
       slide: 0,
       images: [
-        { src: '/assets/example1.png', caption: '📢 Channel Feed Example' },
-        { src: '/assets/example2.png', caption: '📅 Scheduled DM Newsletter Format' },
-        { src: '/assets/example3.png', caption: '⚙️ User Preferences Panel — Tons of Customization!' },
-        { src: '/assets/example4.png', caption: '🛠️ Channel Configuration Tools' }
+        { src: './assets/example1.png', caption: '📢 Channel Feed Example' },
+        { src: './assets/example2.png', caption: '📅 Scheduled DM Newsletter Format' },
+        { src: './assets/example3.png', caption: '⚙️ User Preferences Panel — Tons of Customization!' },
+        { src: './assets/example4.png', caption: '🛠️ Channel Configuration Tools' }
       ],
       autoplay: null,
       startAutoPlay() {
