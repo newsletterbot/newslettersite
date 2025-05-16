@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en-US" class="dark">
+<html lang="en-US" class="dark scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Newsletter Bot</title>
-  <meta name="description" content="Newsletter Bot delivers personalized news digests to your Discord server or DMs. Stay informed with smart, customizable RSS feeds." />
+  <meta name="description"
+    content="Newsletter Bot delivers personalized news digests to your Discord server or DMs. Stay informed with smart, customizable RSS feeds." />
   <meta property="og:title" content="Newsletter Bot" />
-  <meta property="og:description" content="Smart, customizable news digests delivered to your Discord server or inbox." />
+  <meta property="og:description"
+    content="Smart, customizable news digests delivered to your Discord server or inbox." />
   <meta property="og:url" content="https://newsletterbot.github.io/newslettersite/" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://newsletterbot.github.io/newslettersite/" />
+  <link rel="stylesheet" href="/components/scrollbar.css">
 
   <!-- Tailwind Config -->
   <script>
@@ -32,8 +35,15 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .gradient-mask { background: radial-gradient(circle at top right, rgba(128,170,135,0.6), transparent 60%); }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .gradient-mask {
+      background: radial-gradient(circle at top right, rgba(128, 170, 135, 0.6), transparent 60%);
+    }
+  </style>
+
   </style>
 </head>
 
@@ -47,23 +57,57 @@
   </script>
 
   <!-- Hero Section -->
-  <section class="relative py-24 px-6 text-center gradient-mask">
+  <section class="relative py-24 px-6 text-center
+         bg-gradient-to-b
+         from-[#365448]  /* green top */
+         to-[#2C2F33]    /* blackish bottom */">
     <div class="max-w-3xl mx-auto" data-aos="fade-up">
-      <h1 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-dark">Stay Informed, Effortlessly</h1>
-      <p class="text-lg mb-8">Newsletter Bot delivers personalized, interactive news feeds right into Discord — DM or channel.</p>
-      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
-        class="inline-block px-8 py-4 rounded-full border-2 border-accent hover:bg-accent-dark hover:text-white transition">
-        🚀 Invite Now
-      </a>
 
-      <!-- Subtle floating shapes -->
-      <div class="absolute -top-10 -left-20 w-40 h-40 bg-accent rounded-full opacity-20 animate-pulse"></div>
-      <div class="absolute -bottom-10 -right-20 w-60 h-60 bg-accent-dark rounded-full opacity-10 animate-pulse"></div>
+      <!-- Robot image -->
+      <img src="/assets/robot.png" alt="Newsletter Bot" class="mx-auto mb-6 w-80 max-w-xs sm:max-w-md h-auto" />
+
+      <h1 class="text-5xl font-extrabold mb-4 text-white">
+        Stay Informed, Effortlessly
+      </h1>
+      <p class="text-lg mb-8 text-gray-200">
+        Newsletter Bot delivers personalized, interactive news feeds right into Discord — DM or channel feeds — with
+        high levels of customizability. Choose your topics, set delivery times, and tailor your experience to fit your
+        needs.
+      </p>
+      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+        class="px-6 py-4 rounded-xl text-white font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+        style="
+    background: linear-gradient(
+      -45deg,
+      #80AA87 0%,
+      #629784 100%
+    );
+  ">
+        Add to Server
+      </a>
     </div>
   </section>
 
+  <div class="my-12 flex items-center justify-center">
+    <a href="#features"
+      class="group relative inline-flex items-center space-x-1 font-semibold text-sm text-[#80AA87] hover:text-[#80AA87] transition">
+      <span class="relative">
+        Read More
+        <span
+          class="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-[#80AA87] transition-all duration-300 group-hover:w-full"></span>
+      </span>
+      <!-- Downward arrow icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+  </div>
+
+  <hr class="my-12 border-t-2 border-[#80AA87] w-1/2 mx-auto" />
+
   <!-- Features Grid -->
-  <section id="features" class="py-20 px-6">
+  <section id="features" class="py-20 px-6 ">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up">
         <h3 class="text-xl font-semibold mb-2 text-accent">📬 Personal DM Newsletters</h3>
@@ -92,6 +136,83 @@
     </div>
   </section>
 
+  <!--THIS IS THE EXAMPLE CAROUSEL-->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <section class="py-16 bg-[#1E2124] text-white bg-gradient-to-b from-[#2C2F33] to-[#1E2124]">
+    <div class="max-w-5xl mx-auto px-4" x-data="{
+      slide: 0,
+      images: [
+        { src: '/assets/example1.png', caption: '📢 Channel Feed Example' },
+        { src: '/assets/example2.png', caption: '📅 Scheduled DM Newsletter Format' },
+        { src: '/assets/example3.png', caption: '⚙️ User Preferences Panel — Tons of Customization!' },
+        { src: '/assets/example4.png', caption: '🛠️ Channel Configuration Tools' }
+      ],
+      autoplay: null,
+      startAutoPlay() {
+        this.autoplay = setInterval(() => {
+          this.slide = (this.slide + 1) % this.images.length
+        }, 15000)
+      },
+      stopAutoPlay() {
+        clearInterval(this.autoplay)
+      },
+      init() {
+        this.startAutoPlay()
+      }
+    }" x-init="init()">
+      <h2 class="text-3xl font-bold mb-6 text-center">📸 Preview the Bot in Action</h2>
+
+      <div class="relative flex items-center justify-center">
+
+        <!-- Left arrow -->
+        <button @click="slide = (slide === 0 ? images.length - 1 : slide - 1)" @mouseenter="stopAutoPlay()"
+          @mouseleave="startAutoPlay()" class="mr-4 text-white bg-accent hover:bg-accent-dark px-3 py-2 rounded-full">
+          ◀
+        </button>
+
+        <!-- Carousel -->
+        <div class="overflow-hidden rounded-xl shadow-lg w-full max-w-xl">
+          <div class="flex transition-transform duration-500 ease-in-out"
+            :style="'transform: translateX(-' + (slide * 100) + '%)'" style="width: 400%">
+            <template x-for="item in images" :key="item.src">
+              <div class="w-full flex-shrink-0 flex items-center justify-center min-h-[300px]">
+                <img :src="item.src" alt="Preview" class="max-h-[400px] w-auto object-contain" />
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <!-- Right arrow -->
+        <button @click="slide = (slide + 1) % images.length" @mouseenter="stopAutoPlay()" @mouseleave="startAutoPlay()"
+          class="ml-4 text-white bg-accent hover:bg-accent-dark px-3 py-2 rounded-full">
+          ▶
+        </button>
+      </div>
+
+      <!-- Captions -->
+      <div class="text-center mt-4 text-accent text-sm font-medium min-h-[1.5rem]">
+        <template x-for="(item, index) in images" :key="item.src">
+          <span x-show="slide === index" x-transition x-text="item.caption"></span>
+        </template>
+      </div>
+
+      <!-- Dots -->
+      <div class="flex justify-center mt-4 space-x-2">
+        <template x-for="(item, index) in images" :key="index">
+          <button @click="slide = index" :class="{
+            'bg-[#80AA87]': slide === index,
+            'bg-gray-600': slide !== index
+          }" class="w-3 h-3 rounded-full focus:outline-none transition"></button>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-[#1E2124] py-6">
+    <hr class="border-t-2 border-[#80AA87] w-1/2 mx-auto" />
+  </div>
+
   <!-- Why Choose Section -->
   <section class="py-20 px-6 bg-[#1E2124]">
     <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
@@ -100,44 +221,90 @@
       <div class="flex flex-col sm:flex-row justify-center gap-6">
         <div class="text-left">
           <p class="font-semibold text-gray-100">🎯 Precision Filters</p>
-          <p class="text-gray-400">Filter by topic, language, and sentiment.</p>
+          <p class="text-gray-400">Filter by category, tags, keywords, and much more — don't worry about seeing
+            irrelevant articles.</p>
         </div>
         <div class="text-left">
           <p class="font-semibold text-gray-100">🔒 Privacy First</p>
-          <p class="text-gray-400">No analytics, no profiling.</p>
+          <p class="text-gray-400">No analytics, no profiling. We don't collect any data that doesn't need to be
+            collected.</p>
         </div>
         <div class="text-left">
           <p class="font-semibold text-gray-100">🛠️ Admin Tools</p>
-          <p class="text-gray-400">Slash commands and role-based controls.</p>
+          <p class="text-gray-400">We provide users full customization of their feeds, including complete formatting
+            control.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="bg-[#1E2124] py-6">
+    <hr class="border-t-2 border-[#80AA87] w-1/2 mx-auto" />
+  </div>
+
   <!-- FAQ Section -->
-  <section class="py-20 px-6">
+  <section class="py-20 px-6 bg-gradient-to-b from-[#1E2124] to-[#2C2F33]">
     <div class="max-w-4xl mx-auto" data-aos="fade-up">
       <h2 class="text-3xl font-bold mb-12 text-center text-accent">🙋‍♂️ FAQs</h2>
       <div class="space-y-8">
+
         <div>
-          <h4 class="font-semibold text-gray-100">Can I control how often I get news?</h4>
-          <p class="text-gray-400">Yes, choose daily or twice daily and set your preferred times.</p>
+          <h4 class="font-semibold text-gray-100">Can I control my DM Newsletter?</h4>
+          <p class="text-gray-400">
+            Absolutely. You have full control over your personal DM Newsletter experience. You can choose your preferred
+            delivery time (morning or evening), the number of articles, layout style (compact or detailed), and even
+            boost or filter out topics using keywords. It’s tailored to your interests—no clutter, no filler.
+          </p>
         </div>
+
         <div>
           <h4 class="font-semibold text-gray-100">Is my data safe?</h4>
-          <p class="text-gray-400">Minimal storage, no third-party tracking.</p>
+          <p class="text-gray-400">
+            Yes. Newsletter Bot stores only the bare minimum required to deliver your newsletter—such as your Discord ID
+            and selected preferences. We never track messages, never share your data, and we do not use any third-party
+            analytics. Your privacy is a core part of the bot's design.
+          </p>
         </div>
+
         <div>
           <h4 class="font-semibold text-gray-100">What sources are available?</h4>
-          <p class="text-gray-400">Wide range: politics, tech, global, entertainment, and more.</p>
+          <p class="text-gray-400">
+            We aggregate news from a broad range of global and regional outlets—covering U.S. and international
+            politics, technology, science, entertainment, sports, and more. You can mix and match sources across
+            categories, or subscribe to curated feeds that reflect your specific interests and region.
+          </p>
         </div>
+
         <div>
           <h4 class="font-semibold text-gray-100">Can I suggest new features?</h4>
-          <p class="text-gray-400">Join our Discord support server to share ideas.</p>
+          <p class="text-gray-400">
+            Yes! We actively maintain a public roadmap and welcome all suggestions. If there’s a feature, feed, or
+            formatting idea you'd like to see, you can submit it directly through our Discord Support Server. We
+            prioritize user feedback and often build new tools based on community input.
+          </p>
         </div>
+
       </div>
     </div>
   </section>
+
+
+  <section class="bg-gradient-to-r from-[#1E2124] to-[#1E2124] text-white py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">✅ Ready to try it out?</h2>
+    <p class="mb-6">Invite Newsletter Bot to your server and start getting better news today.</p>
+    <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+      class="px-6 py-4 rounded-xl text-white font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+      style="
+    background: linear-gradient(
+      -45deg,
+      #80AA87 0%,
+      #629784 100%
+    );
+  ">
+      Add to Server
+    </a>
+  </section>
+
 
   <!-- Footer -->
   <div id="site-footer"></div>
