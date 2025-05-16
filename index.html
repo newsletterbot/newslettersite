@@ -55,13 +55,18 @@
   </script>
 
   <!-- Hero Section -->
-  <section class="relative py-24 px-6 text-center
-         bg-gradient-to-b
-         from-[#365448]  /* green top */
-         to-[#2C2F33]    /* blackish bottom */">
-    <div class="max-w-3xl mx-auto" data-aos="fade-up">
+  <section class="relative h-screen overflow-hidden text-center py-20 px-6">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline preload="auto"
+      class="absolute inset-0 w-full h-full object-cover z-0 filter grayscale">
+      <source src="./assets/bg.mp4" type="video/mp4">
+    </video>
 
-      <!-- Robot image -->
+    <!-- gradient overlay -->
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-[#365448]/80 via-[#2C2F33]/80 to-[#2C2F33]/100"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 max-w-3xl mx-auto" data-aos="fade-up">
       <img src="./assets/robot.png" alt="Newsletter Bot" class="mx-auto mb-6 w-80 max-w-xs sm:max-w-md h-auto" />
 
       <h1 class="text-5xl font-extrabold mb-4 text-white">
@@ -72,31 +77,33 @@
         high levels of customizability. Choose your topics, set delivery times, and tailor your experience to fit your
         needs.
       </p>
+
       <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
-        class="px-4 py-2 rounded-md text-white font-semibold transition hover:scale-105"
+        class="px-4 py-2 rounded-md text-white font-semibold transition hover:scale-105 mb-8 inline-block"
         style="background: linear-gradient(-45deg, #80AA87 0%, #629784 100%);">
         Add to Server
       </a>
+
+      <!-- Read More link -->
+      <div class="mt-8 flex items-center justify-center">
+        <a href="#divider"
+          class="group relative inline-flex items-center space-x-1 font-semibold text-sm text-[#80AA87] hover:text-[#80AA87] transition">
+          <span class="relative">
+            Read More
+            <span
+              class="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-[#80AA87] transition-all duration-300 group-hover:w-full"></span>
+          </span>
+          <!-- Downward arrow icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
-  <div class="my-12 flex items-center justify-center">
-    <a href="#features"
-      class="group relative inline-flex items-center space-x-1 font-semibold text-sm text-[#80AA87] hover:text-[#80AA87] transition">
-      <span class="relative">
-        Read More
-        <span
-          class="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-[#80AA87] transition-all duration-300 group-hover:w-full"></span>
-      </span>
-      <!-- Downward arrow icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-0.5" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </a>
-  </div>
-
-  <hr class="my-12 border-t-2 border-[#80AA87] w-1/2 mx-auto" />
+  <hr id="divider" class="my-12 border-t-2 border-[#80AA87] w-1/2 mx-auto" />
 
   <!-- Features Grid -->
   <section id="features" class="py-20 px-6 ">
