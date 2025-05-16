@@ -1,178 +1,154 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" class="dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Newsletter Bot</title>
-  <meta name="description"
-    content="Newsletter Bot delivers personalized news digests to your Discord server or DMs. Stay informed with smart, customizable RSS feeds." />
+  <meta name="description" content="Newsletter Bot delivers personalized news digests to your Discord server or DMs. Stay informed with smart, customizable RSS feeds." />
   <meta property="og:title" content="Newsletter Bot" />
-  <meta property="og:description"
-    content="Smart, customizable news digests delivered to your Discord server or inbox." />
+  <meta property="og:description" content="Smart, customizable news digests delivered to your Discord server or inbox." />
   <meta property="og:url" content="https://newsletterbot.github.io/newslettersite/" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://newsletterbot.github.io/newslettersite/" />
-  <!-- <meta property="og:image" content="https://newsletterbot.github.io/newslettersite/assets/social-preview.png" /> -->
-  <!-- <meta name="twitter:card" content="summary_large_image" /> -->
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: '#80AA87',
+            'accent-dark': '#5C7E6B',
+          },
+        },
+      },
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-mask { background: radial-gradient(circle at top right, rgba(128,170,135,0.6), transparent 60%); }
   </style>
 </head>
 
-<body class="pt-16 bg-[#F4F1EB] text-[#2A2A2A]">
+<body class="dark:bg-[#2C2F33] dark:text-gray-100 overflow-x-hidden">
   <!-- Floating Header -->
   <div id="site-header"></div>
   <script>
-    fetch("components/header.html")
+    fetch("components/header-dark.html")
       .then(res => res.text())
       .then(html => document.getElementById("site-header").innerHTML = html);
   </script>
 
-  <!-- Features Section -->
-  <section id="features" class="py-20 px-6 bg-gradient-to-b from-[#F3F1EC] to-[#E7E3DA] scroll-mt-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">✨ What Newsletter Bot Can Do</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">📬 Personal DM Newsletters</h3>
-          <p class="text-gray-600">Configure personalized daily newsletters delivered directly to your DM inbox.</p>
+  <!-- Hero Section -->
+  <section class="relative py-24 px-6 text-center gradient-mask">
+    <div class="max-w-3xl mx-auto" data-aos="fade-up">
+      <h1 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-dark">Stay Informed, Effortlessly</h1>
+      <p class="text-lg mb-8">Newsletter Bot delivers personalized, interactive news feeds right into Discord — DM or channel.</p>
+      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
+        class="inline-block px-8 py-4 rounded-full border-2 border-accent hover:bg-accent-dark hover:text-white transition">
+        🚀 Invite Now
+      </a>
+
+      <!-- Subtle floating shapes -->
+      <div class="absolute -top-10 -left-20 w-40 h-40 bg-accent rounded-full opacity-20 animate-pulse"></div>
+      <div class="absolute -bottom-10 -right-20 w-60 h-60 bg-accent-dark rounded-full opacity-10 animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section id="features" class="py-20 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-2 text-accent">📬 Personal DM Newsletters</h3>
+        <p class="text-gray-400">Get daily or bi-daily digests delivered privately to your inbox.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="50">
+        <h3 class="text-xl font-semibold mb-2 text-accent">📢 Live Server Feeds</h3>
+        <p class="text-gray-400">Broadcast real-time updates in your server channels with customizable layouts.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold mb-2 text-accent">⚙️ User Preferences</h3>
+        <p class="text-gray-400">Tailor categories, delivery times, and filters for each user.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="150">
+        <h3 class="text-xl font-semibold mb-2 text-accent">📊 Smart Scoring</h3>
+        <p class="text-gray-400">Advanced keyword ranking surfaces only the most relevant articles.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold mb-2 text-accent">🧩 Category Grouping</h3>
+        <p class="text-gray-400">Choose grouped or unified streams per channel or DM.</p>
+      </div>
+      <div class="bg-[#23272A] p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="250">
+        <h3 class="text-xl font-semibold mb-2 text-accent">💬 Interactive UI</h3>
+        <p class="text-gray-400">Slash commands, buttons, and dropdowns for seamless news control.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="py-20 px-6 bg-[#1E2124]">
+    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-6 text-accent-dark">Why Choose Newsletter Bot?</h2>
+      <p class="text-gray-300 mb-8">A sleek, secure, and powerful way to stay on top of current events.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <div class="text-left">
+          <p class="font-semibold text-gray-100">🎯 Precision Filters</p>
+          <p class="text-gray-400">Filter by topic, language, and sentiment.</p>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">📢 Server Feed Channels</h3>
-          <p class="text-gray-600">Designate public channels that receive live-updating news posts based on your
-            settings.</p>
+        <div class="text-left">
+          <p class="font-semibold text-gray-100">🔒 Privacy First</p>
+          <p class="text-gray-400">No analytics, no profiling.</p>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">⚙️ Per-User Preferences</h3>
-          <p class="text-gray-600">Each user can set custom categories, delivery time, and source filters independently.
-          </p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">📊 Scoring System</h3>
-          <p class="text-gray-600">Articles are ranked with a smart keyword matching system to highlight the most
-            relevant news — don't worry about being spammed with irrelevant articles! </p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">🧩 Category Grouping</h3>
-          <p class="text-gray-600">Group articles by topic, or send them as a unified stream — your choice, per channel
-            or for your DM Newsletter.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">💬 Interactive Discord UI</h3>
-          <p class="text-gray-600">Use dropdowns, buttons, and embeds to customize and explore news inside Discord.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">📥 Feed Dispatch Engine</h3>
-          <p class="text-gray-600">A fast, efficient polling system ensures your server receives updates not long after
-            they're posted.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">🔧 Channel Customization</h3>
-          <p class="text-gray-600">Set channel-specific article caps, keyword filters, and layout modes.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">🌐 Global & Local Sources</h3>
-          <p class="text-gray-600">Mix and match feeds from U.S., international, tech, politics, entertainment and more.
-          </p>
+        <div class="text-left">
+          <p class="font-semibold text-gray-100">🛠️ Admin Tools</p>
+          <p class="text-gray-400">Slash commands and role-based controls.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Expanded Why Choose Section -->
-  <section class="py-20 px-6 bg-gradient-to-b from-white to-[#F3F1EC]">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">❓ Why Choose Newsletter Bot?</h2>
-      <p class="text-lg text-gray-700 mb-6" data-aos="fade-up">Designed with community engagement and information
-        clarity at its core, Newsletter Bot isn't just another feed reader — it's a communication tool tailored for
-        servers that care about current events and trustworthy delivery.</p>
-      <ul class="text-left text-gray-700 space-y-4 max-w-xl mx-auto" data-aos="fade-up">
-        <li><span class="font-semibold">🎯 Precision Filters:</span> Target content by topic, language, and even
-          sentiment.</li>
-        <li><span class="font-semibold">🧠 Smart Sorting:</span> Score-driven article ranking and deduplication to avoid
-          irrelevant posts.</li>
-        <li><span class="font-semibold">🎨 Flexible Layouts:</span> Choose compact summaries, single-article views, or
-          dynamic embeds.</li>
-        <li><span class="font-semibold">📜 Clean UI:</span> Built using modern Discord UI components that work
-          beautifully.</li>
-        <li><span class="font-semibold">🔒 Privacy First:</span> No message logging, no third-party analytics — your
-          data stays yours.</li>
-        <li><span class="font-semibold">🛠️ Admin Friendly:</span> Slash commands, role-based controls, and modular
-          config tools.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Expanded FAQ Section -->
-  <section class="bg-gradient-to-b from-[#F3F1EC] to-[#E3DDD2] py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">🙋‍♂️ Frequently Asked Questions</h2>
-      <div class="space-y-10">
-        <div data-aos="fade-up">
-          <h3 class="font-semibold text-lg">📬 Can I control how often I get news?</h3>
-          <p class="text-gray-600">Yes! You can choose daily or twice-daily digests and select your preferred delivery
-            time.</p>
+  <!-- FAQ Section -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-12 text-center text-accent">🙋‍♂️ FAQs</h2>
+      <div class="space-y-8">
+        <div>
+          <h4 class="font-semibold text-gray-100">Can I control how often I get news?</h4>
+          <p class="text-gray-400">Yes, choose daily or twice daily and set your preferred times.</p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="100">
-          <h3 class="font-semibold text-lg">🛡️ Is my data safe?</h3>
-          <p class="text-gray-600">We only store the minimum needed to deliver your newsletter — no tracking, no
-            profiling, and no sensitive data from your server or user information.</p>
+        <div>
+          <h4 class="font-semibold text-gray-100">Is my data safe?</h4>
+          <p class="text-gray-400">Minimal storage, no third-party tracking.</p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="200">
-          <h3 class="font-semibold text-lg">🌍 What kind of news sources are used?</h3>
-          <p class="text-gray-600">We aggregate news sources across a variety of sources spanning the left, right,
-            center, and more factual-oriented news sources as well. We include categories like sports, politics, global
-            news, health, gaming, and country-based news as well. Add our bot to your server to find out our full slate
-            of offerings!</p>
+        <div>
+          <h4 class="font-semibold text-gray-100">What sources are available?</h4>
+          <p class="text-gray-400">Wide range: politics, tech, global, entertainment, and more.</p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="300">
-          <h3 class="font-semibold text-lg">📈 Can I prioritize certain topics?</h3>
-          <p class="text-gray-600">Yes! Use keyword boosting to raise the visibility of stories about specific topics or
-            people you care about most.</p>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="400">
-          <h3 class="font-semibold text-lg">🗂️ How do categories work?</h3>
-          <p class="text-gray-600">You can subscribe to individual news categories like U.S. politics, world news, or
-            tech — each with its own custom keyword scoring to deliver the most relevant articles.</p>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="500">
-          <h3 class="font-semibold text-lg">💡 Can I suggest new features?</h3>
-          <p class="text-gray-600">Absolutely! We welcome ideas via our Discord Support Server and actively maintain
-            user feedback lists.</p>
+        <div>
+          <h4 class="font-semibold text-gray-100">Can I suggest new features?</h4>
+          <p class="text-gray-400">Join our Discord support server to share ideas.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Banner -->
-  <section class="bg-gradient-to-r from-[#80AA87] to-[#5C7E6B] text-white py-16 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">✅ Ready to try it out?</h2>
-    <p class="mb-6">Invite Newsletter Bot to your server and start getting smarter news today.</p>
-    <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank"
-      class="bg-gradient-to-r from-white to-[#f1f1f1] text-[#5C7E6B] px-8 py-4 rounded-lg font-bold shadow hover:brightness-110 transition">🚀
-      Invite
-      Now</a>
-  </section>
-
-
-  <!-- Dynamic Footer -->
+  <!-- Footer -->
   <div id="site-footer"></div>
   <script>
-    fetch("components/footer.html")
+    fetch("components/footer-dark.html")
       .then(res => res.text())
       .then(html => document.getElementById("site-footer").innerHTML = html);
   </script>
 
   <script>
-    AOS.init();
+    AOS.init({ duration: 800, once: true });
   </script>
 </body>
 
