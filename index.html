@@ -1,159 +1,185 @@
 <!DOCTYPE html>
-<html lang="en-US" class="dark">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Newsletter Bot</title>
-  <meta name="description" content="Newsletter Bot delivers personalized news digests to your Discord server or DMs. Stay informed with smart, customizable RSS feeds." />
-
-  <!-- Tailwind + Custom Config -->
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            accent: '#80AA87',
-            'accent-dark': '#5C7E6B',
-            'bg-primary': '#1A1C1F',
-            'bg-secondary': '#292B2E'
-          }
-        }
-      }
+  <!-- Bootstrap & Now UI Kit -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/now-ui-kit.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800,900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  
+  <!-- Accent color overrides -->
+  <style>
+    :root {
+      --primary: #80AA87;
+      --primary-focus: #5C7E6B;
+      --info: var(--primary);
     }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <style>body{font-family:'Inter',sans-serif;}</style>
+    /* Navbar links */
+    .navbar-nav .nav-link {
+      color: #fff;
+      transition: color .2s;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--primary);
+    }
+    /* Outline-accent button */
+    .btn-outline-accent {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-outline-accent:hover {
+      background-color: var(--primary);
+      color: #fff;
+    }
+    /* Primary button */
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-focus);
+      border-color: var(--primary-focus);
+    }
+    /* Hero background gradient */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(128,170,135,0.8), rgba(92,126,107,0.8)), url('assets/hero-bg.jpg') center/cover no-repeat;
+      color: #fff;
+    }
+  </style>
 </head>
+<body class="dark:bg-[#2C2F33] dark:text-gray-100">
 
-<body class="bg-bg-primary text-gray-200 overflow-x-hidden">
-  <!-- Navigation -->
-  <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-bg-primary/80 border-b border-gray-700">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="text-2xl font-bold text-white">Newsletter Bot</a>
-      <nav class="space-x-6">
-        <a href="#features" class="hover:text-accent transition">Features</a>
-        <a href="#testimonials" class="hover:text-accent transition">Testimonials</a>
-        <a href="#roadmap" class="hover:text-accent transition">Roadmap</a>
-        <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" class="px-4 py-2 bg-accent hover:bg-accent-dark rounded-full font-semibold transition">Invite</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="pt-24">
-    <!-- Hero -->
-    <section class="grid lg:grid-cols-2 gap-12 items-center px-6 lg:px-24 py-20 relative">
-      <div data-aos="fade-right">
-        <h1 class="text-5xl lg:text-6xl font-extrabold mb-4 text-white">Effortless News Delivery<br/><span class="text-accent">Right Inside Discord</span></h1>
-        <p class="text-lg text-gray-300 mb-8">Customize daily or twice-daily newsletters, real-time server feeds, and intelligent keyword scoring to keep your community informed—without the noise.</p>
-        <div class="space-x-4">
-          <a href="#features" class="px-6 py-3 bg-accent hover:bg-accent-dark rounded-full font-semibold transition">Explore Features</a>
-          <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" class="px-6 py-3 border-2 border-accent text-accent hover:bg-accent-dark hover:text-white rounded-full font-semibold transition">Invite Now</a>
-        </div>
-      </div>
-      <div class="flex justify-center" data-aos="fade-left">
-        <img src="assets/hero-screenshot.png" alt="Bot Preview" class="w-full max-w-lg rounded-2xl shadow-2xl border-4 border-accent" />
-      </div>
-      <!-- Accent Shapes -->
-      <div class="absolute -top-12 -left-12 w-36 h-36 bg-accent rounded-full opacity-20 animate-pulse"></div>
-      <div class="absolute -bottom-12 -right-16 w-52 h-52 bg-accent-dark rounded-full opacity-15 animate-pulse"></div>
-    </section>
-
-    <!-- Features -->
-    <section id="features" class="bg-bg-secondary py-20 px-6 lg:px-24">
-      <h2 class="text-4xl font-bold text-center text-white mb-12" data-aos="fade-up">Core Features</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-bg-primary p-6 rounded-xl hover:bg-bg-primary/80 transition" data-aos="zoom-in">
-          <h3 class="text-2xl font-semibold text-accent mb-2">📬 DM Newsletters</h3>
-          <p class="text-gray-400">Daily or twice-daily personalized digests delivered privately.</p>
-        </div>
-        <div class="bg-bg-primary p-6 rounded-xl hover:bg-bg-primary/80 transition" data-aos="zoom-in" data-aos-delay="100">
-          <h3 class="text-2xl font-semibold text-accent mb-2">📢 Server Feeds</h3>
-          <p class="text-gray-400">Real-time updates with custom layouts in any channel.</p>
-        </div>
-        <div class="bg-bg-primary p-6 rounded-xl hover:bg-bg-primary/80 transition" data-aos="zoom-in" data-aos-delay="200">
-          <h3 class="text-2xl font-semibold text-accent mb-2">⚙️ Preferences</h3>
-          <p class="text-gray-400">User-level filters, schedules, and category settings.</p>
-        </div>
-        <div class="bg-bg-primary p-6 rounded-xl hover:bg-bg-primary/80 transition" data-aos="zoom-in" data-aos-delay="300">
-          <h3 class="text-2xl font-semibold text-accent mb-2">📊 Smart Scoring</h3>
-          <p class="text-gray-400">Keyword-based ranking and deduplication for relevance.</p>
-        </div>
-        <div class="bg-bg-primary p-6 rounded-xl hover:bg-bg-primary/80 transition" data-aos="zoom-in" data-aos-delay="400">
-          <h3 class="text-2xl font-semibold text-accent mb-2">🧩 Grouping</h3>
-          <p class="text-gray-400">Choose grouped or single-stream delivery per channel.</p>
-        </div>
-        <div class="bg-bg-primary p-6 rounded-xl hover:bg-bg-primary/80 transition" data-aos="zoom-in" data-aos-delay="500">
-          <h3 class="text-2xl font-semibold text-accent mb-2">💬 Interactive UI</h3>
-          <p class="text-gray-400">Slash commands, buttons, and dropdowns inside Discord.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-20 px-6 lg:px-24">
-      <h2 class="text-4xl font-bold text-center text-white mb-12" data-aos="fade-up">What Our Users Say</h2>
-      <div class="max-w-3xl mx-auto space-y-8">
-        <div class="bg-bg-secondary p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-          <p class="italic text-gray-300">“Newsletter Bot transformed how my community follows the news. No more spam—just the headlines that matter!”</p>
-          <p class="mt-4 font-semibold text-accent">— Alex, Server Admin</p>
-        </div>
-        <div class="bg-bg-secondary p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
-          <p class="italic text-gray-300">“Setting up custom filters and layouts was seamless. Highly recommended for any active Discord guild!”</p>
-          <p class="mt-4 font-semibold text-accent">— Jamie, Community Manager</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Roadmap -->
-    <section id="roadmap" class="bg-bg-secondary py-20 px-6 lg:px-24">
-      <h2 class="text-4xl font-bold text-center text-white mb-12" data-aos="fade-up">Roadmap</h2>
-      <div class="relative max-w-3xl mx-auto">
-        <div class="border-l-2 border-gray-700 absolute h-full left-1/2 transform -translate-x-1/2"></div>
-        <ul class="space-y-12">
-          <li class="relative pl-12" data-aos="fade-right">
-            <span class="w-6 h-6 bg-accent rounded-full absolute left-1/2 -ml-3"></span>
-            <h3 class="font-semibold text-xl text-white">Q3 2025</h3>
-            <p class="text-gray-400">Mobile companion app & push notifications.</p>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/BotLogo.svg" width="40" height="40" alt="Newsletter Bot"/> Newsletter Bot
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Commands</a>
+              <a class="dropdown-item" href="#">Tutorials</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Server Settings</a>
+            </div>
           </li>
-          <li class="relative pl-12 text-right" data-aos="fade-left">
-            <span class="w-6 h-6 bg-accent rounded-full absolute left-1/2 -ml-3"></span>
-            <h3 class="font-semibold text-xl text-white">Q4 2025</h3>
-            <p class="text-gray-400">AI-driven summaries & keyword suggestions.</p>
-          </li>
-          <li class="relative pl-12" data-aos="fade-right">
-            <span class="w-6 h-6 bg-accent rounded-full absolute left-1/2 -ml-3"></span>
-            <h3 class="font-semibold text-xl text-white">2026+</h3>
-            <p class="text-gray-400">Multi-language support & analytics dashboard.</p>
+          <li class="nav-item">
+            <button class="btn btn-outline-accent ml-lg-3">Login</button>
           </li>
         </ul>
       </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="py-20 px-6 bg-gradient-to-r from-accent to-accent-dark text-bg-primary">
-      <div class="max-w-3xl mx-auto text-center" data-aos="zoom-in">
-        <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">Ready to Level Up Your News?</h2>
-        <p class="text-gray-200 mb-8">Invite Newsletter Bot today and transform how your server stays informed.</p>
-        <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205" target="_blank" class="px-8 py-4 bg-bg-primary border-2 border-white rounded-full font-semibold hover:bg-white hover:text-accent-dark transition">🚀 Invite Now</a>
+    </div>
+  </nav>
+  
+  <!-- Hero -->
+  <section class="hero-section text-center py-5">
+    <div class="container">
+      <h1 class="display-4 font-weight-bold mb-3">Elevate Your Server’s News</h1>
+      <p class="lead mb-4">Newsletter Bot brings curated, interactive news digests directly to Discord—no spam, all signal.</p>
+      <a href="#features" class="btn btn-primary btn-lg mr-2">Explore Features</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205"
+         class="btn btn-outline-light btn-lg">Add to Server</a>
+    </div>
+  </section>
+  
+  <!-- Features -->
+  <section id="features" class="py-6">
+    <div class="container">
+      <h2 class="text-center mb-5 text-primary">Features</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-primary">📬 DM Newsletters</h5>
+              <p class="card-text">Daily or bi-daily private digests tailored to each user.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-primary">📢 Server Feeds</h5>
+              <p class="card-text">Live, customizable posts in your chosen channels.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-primary">⚙️ Smart Scoring</h5>
+              <p class="card-text">Keyword-driven ranking to surface only the most relevant stories.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
-
+    </div>
+  </section>
+  
+  <!-- Stats -->
+  <section id="statistics" class="py-6 bg-light">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h3 class="display-4 text-primary">1.2K+</h3>
+          <p>Servers</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h3 class="display-4 text-primary">15K+</h3>
+          <p>Active Users</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h3 class="display-4 text-primary">5K+</h3>
+          <p>Channels</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Callout -->
+  <section id="get-started" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-3">Ready to Get Started?</h2>
+      <p class="mb-4">Invite Newsletter Bot now and supercharge your server’s news feed.</p>
+      <a href="https://discord.com/oauth2/authorize?client_id=1058234280838447205"
+         class="btn btn-primary btn-lg">Invite Now</a>
+    </div>
+  </section>
+  
   <!-- Footer -->
-  <footer class="bg-bg-secondary text-gray-400 py-10 px-6 text-center">
-    <p class="mb-4">© 2025 Newsletter Bot. Built with 💚 for informed communities.</p>
-    <div class="space-x-4 text-sm">
-      <a href="#" class="hover:text-accent transition">Home</a>
-      <a href="privacy.html" class="hover:text-accent transition">Privacy Policy</a>
-      <a href="terms.html" class="hover:text-accent transition">Terms of Service</a>
-      <a href="https://discord.gg/8GmjZnU2N9" target="_blank" class="hover:text-accent transition">Support Server</a>
+  <footer class="py-4 bg-dark text-light text-center">
+    <div class="container">
+      <img src="assets/BotLogoWord.svg" width="120" alt="Newsletter Bot"/><br/>
+      <small>© Newsletter Bot — 2025</small><br/>
+      <small>Site by <a href="https://nouridio.com" class="text-primary">nouridio</a></small>
     </div>
   </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({duration:800,once:true});</script>
+  
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="js/now-ui-kit.min.js"></script>
 </body>
 </html>
